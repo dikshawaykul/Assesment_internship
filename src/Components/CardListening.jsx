@@ -25,7 +25,7 @@ function CardListing()
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`API_ENDPOINT_URL?page=${page}&pageSize=${pageSize}`);
+      const response = await axios.get(`http://localhost:3000/data?page=${page}&pageSize=${pageSize}`);
       const newData = response.data;
       setCardData((prevData) => [...prevData, ...newData]);
       setPage((prevPage) => prevPage + 1);
